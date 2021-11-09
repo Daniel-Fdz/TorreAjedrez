@@ -199,4 +199,10 @@ public class Torre {
 			return false;
 		return true;
 	}
+	
+	// Método toString que devuelve la fila, la columna y el color
+	@Override
+	public String toString() {
+		return "fila=" + posicion.getFila() + ", columna=" + posicion.getColumna() + ", color=" + color;
+	}
 }
