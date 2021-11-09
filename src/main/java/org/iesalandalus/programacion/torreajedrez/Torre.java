@@ -145,4 +145,29 @@ public class Torre {
 				
 		}
 	}
+
+	// Método que realiza los enroques
+	public void enrocar(Direccion direccion) throws OperationNotSupportedException {
+		// Si la dirección es nula, lanzamos excepción
+		if(direccion == null) {
+			throw new NullPointerException("ERROR: La dirección no puede ser nula.");
+		}
+		
+		// Comprobamos que el color sea el correcto y la posición sea la correcta
+		if((color.equals(Color.BLANCO) && posicion.getFila() == 1) || (color.equals(Color.NEGRO) && posicion.getFila() == 8)) {
+			// Comprobamos el color y dependiendo del resultado asignamos 1 u 8 a la variable
+			int fila = color.equals(Color.BLANCO) ? 1 : 8;
+			
+			// Realizamos los enroques dependiendo del tipo que sea
+			if(direccion.equals(Direccion.ENROQUE_CORTO) && posicion.getColumna() == 'h') {
+				setPosicion(new Posicion(fila, 'f'));
+			} else if(direccion.equals(Direccion.ENROQUE_LARGO) && posicion.getColumna() == 'a') {
+				setPosicion(new Posicion(fila, 'd'));
+			} else {
+				throw new OperationNotSupportedException("ERROR: Movimiento de enroque no válido.");
+			}
+		} else {
+			throw new OperationNotSupportedException("ERROR: Movimiento de enroque no válido.");
+		}
+	}
 }
