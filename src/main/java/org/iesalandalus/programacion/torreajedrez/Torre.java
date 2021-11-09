@@ -22,6 +22,21 @@ public class Torre {
 		}
 	}
 
+	// Constructor con los parámetros de color y columna
+	public Torre(Color color, char columna) {
+		setColor(color);
+		
+		if(columna !='a' && columna != 'h') {
+			throw new IllegalArgumentException("ERROR: Columna no válida.");
+		} else {
+			if(color.equals(Color.BLANCO)) {
+				setPosicion(new Posicion(1, columna));
+			} else {
+				setPosicion(new Posicion(8, columna));
+			}
+		}
+	}
+
 	// Devuelve el color
 	public Color getColor() {
 		return color;
