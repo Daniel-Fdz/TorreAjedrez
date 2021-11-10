@@ -40,4 +40,33 @@ public class MainApp {
 		return opcion;
 	}
 
+	// Pide introducir el color de nuestra torre y mientras no sea válido seguirá preguntando
+	private static Color elegirColor() {
+		Color color = null;
+		int numeroColor = 0;
+		
+		do {
+			System.out.println("Introduzca una opción para escoger el color de la torre:");
+			System.out.println("1.Blanco");
+			System.out.println("2.Negro");
+			
+			numeroColor = Entrada.entero();
+			
+			switch(numeroColor) {
+				case 1:
+					color = Color.BLANCO;
+					break;
+				case 2:
+					color = Color.NEGRO;
+					break;
+				default:
+					System.out.println("ERROR: Ese color no es válido.");
+					break;
+			}
+			
+		}while(numeroColor != 1 && numeroColor != 2);
+		
+		return color;
+	}
+
 }
