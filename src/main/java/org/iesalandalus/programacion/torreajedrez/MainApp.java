@@ -5,7 +5,9 @@ import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class MainApp {
 	
+	// Atributos de la clase
 	private static Torre torre;
+	private static int salida = 0;
 
 	public static void main(String[] args) {
 		
@@ -165,4 +167,47 @@ public class MainApp {
 		}
 	}
 
+	// Obtiene una opción por parámetro y la ejecuta según sea el caso
+	private static void ejecutarOpcion(int opcion) {
+		switch(opcion) {
+			case 1:
+				crearTorreDefecto();
+				mostrarTorre();
+				break;
+			case 2:
+				crearTorreColor();
+				mostrarTorre();
+				break;
+			case 3:
+				crearTorreColorColumna();
+				mostrarTorre();
+				break;
+			case 4:
+				mover();
+				mostrarTorre();
+				break;
+			case 5:
+				try {
+					torre.enrocar(Direccion.ENROQUE_CORTO);
+					mostrarTorre();
+				} catch (OperationNotSupportedException e) {
+					System.out.println("ERROR: No es posible realizar un enroque corto en esta posición.");
+				}
+				break;
+			case 6:
+				try {
+					torre.enrocar(Direccion.ENROQUE_LARGO);
+					mostrarTorre();
+				} catch (OperationNotSupportedException e) {
+					System.out.println("ERROR: No es posible realizar un enroque largo en esta posición.");
+				}
+				break;
+			case 7:
+				salida = 1;
+				break;
+			default:
+				System.out.println("ERROR: Esta opción no es válida.");
+				break;
+		}
+	}
 }
