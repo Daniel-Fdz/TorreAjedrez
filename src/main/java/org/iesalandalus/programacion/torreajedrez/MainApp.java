@@ -47,8 +47,8 @@ public class MainApp {
 		
 		do {
 			System.out.println("Introduzca una opción para escoger el color de la torre:");
-			System.out.println("1.Blanco");
-			System.out.println("2.Negro");
+			System.out.println("1. Blanco");
+			System.out.println("2. Negro");
 			
 			numeroColor = Entrada.entero();
 			
@@ -84,6 +84,15 @@ public class MainApp {
 		} while(columna != 'a' && columna != 'h');
 		
 		return columna;
+	}
+
+	// Mostramos el menú de direcciones
+	private static void mostrarMenuDirecciones() {
+		System.out.println("Introduzca una opción:");
+		System.out.println("1. Arriba.");
+		System.out.println("2. Abajo.");
+		System.out.println("3. Izquierda.");
+		System.out.println("4. Derecha.");
 	}
 
 }
