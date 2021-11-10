@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.torreajedrez;
 
+import org.iesalandalus.programacion.utilidades.Entrada;
+
 public class MainApp {
 	
 	private static Torre torre;
@@ -29,6 +31,13 @@ public class MainApp {
 		System.out.println("6. Enroque largo");
 		System.out.println("7. Salir");
 		System.out.println("*-----------------------------------------------------------------*");
+	}
+
+	// Muestra el menú para elegir una opción
+	private static int elegirOpcion() {
+		mostrarMenu();
+		int opcion = Entrada.entero();
+		return opcion;
 	}
 
 }
