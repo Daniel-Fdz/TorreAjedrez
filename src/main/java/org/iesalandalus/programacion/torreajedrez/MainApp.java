@@ -95,4 +95,38 @@ public class MainApp {
 		System.out.println("4. Derecha.");
 	}
 
+	// Mostramos el menú y pedimos que se elija una opción válida
+	private static Direccion elegirDireccion() {
+		Direccion direccion = null;
+		int opcion;
+		
+		do {
+			mostrarMenuDirecciones();
+			opcion = Entrada.entero();
+		}while(opcion < 1 || opcion > 6);
+			
+			switch(opcion) {
+				case 1:
+					direccion = Direccion.ARRIBA;
+					break;
+				case 2:
+					direccion = Direccion.ABAJO;
+					break;
+				case 3:
+					direccion = Direccion.IZQUIERDA;
+					break;
+				case 4:
+					direccion = Direccion.DERECHA;
+					break;
+				case 5:
+					direccion = Direccion.ENROQUE_CORTO;
+					break;
+				case 6:
+					direccion = Direccion.ENROQUE_LARGO;
+					break;
+			}
+		
+		return direccion;
+	}
+
 }
