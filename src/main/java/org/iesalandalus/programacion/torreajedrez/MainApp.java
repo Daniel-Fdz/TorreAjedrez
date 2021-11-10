@@ -191,6 +191,8 @@ public class MainApp {
 					mostrarTorre();
 				} catch (OperationNotSupportedException e) {
 					System.out.println("ERROR: No es posible realizar un enroque corto en esta posición.");
+				} catch (NullPointerException e) {
+					System.out.println("ERROR: No es posible realizar un enroque corto sin una torre.");
 				}
 				break;
 			case 6:
@@ -199,6 +201,8 @@ public class MainApp {
 					mostrarTorre();
 				} catch (OperationNotSupportedException e) {
 					System.out.println("ERROR: No es posible realizar un enroque largo en esta posición.");
+				} catch (NullPointerException e) {
+					System.out.println("ERROR: No es posible realizar un enroque largo sin una torre.");
 				}
 				break;
 			case 7:
