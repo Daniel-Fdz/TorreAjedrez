@@ -111,7 +111,7 @@ public class MainApp {
 		do {
 			mostrarMenuDirecciones();
 			opcion = Entrada.entero();
-		}while(opcion < 1 || opcion > 6);
+		}while(opcion < 1 || opcion > 4);
 			
 			switch(opcion) {
 				case 1:
@@ -125,12 +125,6 @@ public class MainApp {
 					break;
 				case 4:
 					direccion = Direccion.DERECHA;
-					break;
-				case 5:
-					direccion = Direccion.ENROQUE_CORTO;
-					break;
-				case 6:
-					direccion = Direccion.ENROQUE_LARGO;
 					break;
 			}
 		
