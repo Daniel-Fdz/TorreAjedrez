@@ -85,7 +85,7 @@ public class MainApp {
 			System.out.println("Introduzca 'a' o 'h' para elegir la columna inicial de la torre:");
 			columna = Entrada.caracter();
 			
-			if(columna != 'a' || columna != 'h') {
+			if(columna != 'a' && columna != 'h') {
 				System.out.println("ERROR: Esa columna no es válida.");
 			}
 			
