@@ -111,6 +111,9 @@ public class MainApp {
 		do {
 			mostrarMenuDirecciones();
 			opcion = Entrada.entero();
+			if(opcion < 1 || opcion > 4) {
+				System.out.println("ERROR: La opción introducida no es válida.");
+			}
 		}while(opcion < 1 || opcion > 4);
 			
 			switch(opcion) {
