@@ -111,7 +111,7 @@ public class MainApp {
 		do {
 			mostrarMenuDirecciones();
 			opcion = Entrada.entero();
-		}while(opcion < 1 || opcion > 6);
+		}while(opcion < 1 || opcion > 4);
 			
 			switch(opcion) {
 				case 1:
