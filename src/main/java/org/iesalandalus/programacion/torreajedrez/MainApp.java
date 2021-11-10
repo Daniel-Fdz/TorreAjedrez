@@ -69,4 +69,21 @@ public class MainApp {
 		return color;
 	}
 
+	// Pide introducir la columna inicial de nuestra torre y mientras no sea válida seguirá preguntando
+	private static char elegirColumnaInicial() {
+		char columna;
+		
+		do {
+			System.out.println("Introduzca 'a' o 'h' para elegir la columna inicial de la torre:");
+			columna = Entrada.caracter();
+			
+			if(columna != 'a' || columna != 'h') {
+				System.out.println("ERROR: Esa columna no es válida.");
+			}
+			
+		} while(columna != 'a' && columna != 'h');
+		
+		return columna;
+	}
+
 }
