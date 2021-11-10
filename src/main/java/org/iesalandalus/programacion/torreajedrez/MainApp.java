@@ -1,5 +1,6 @@
 package org.iesalandalus.programacion.torreajedrez;
 
+import javax.naming.OperationNotSupportedException;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class MainApp {
@@ -142,6 +143,26 @@ public class MainApp {
 	// Creamos la torre con un color y una columna pasados por parámetros
 	private static void crearTorreColorColumna() {
 		torre = new Torre(elegirColor(), elegirColumnaInicial());
+	}
+
+	// Muestra el menú de direcciones, pregunta por la dirección, cantidad de pasos y mueve la torre
+	private static void mover() {
+		Direccion direccion;
+		int pasos;
+		
+		if(torre == null) {
+			System.out.println("ERROR: La torre no puede ser nula.");
+		} else {
+			System.out.println("Introduzca los pasos que quiere dar:");
+			pasos = Entrada.entero();
+			direccion = elegirDireccion();
+			
+			try {
+				torre.mover(direccion, pasos);
+			} catch(OperationNotSupportedException e) {
+				System.out.println(e.getMessage());
+			}
+		}
 	}
 
 }
