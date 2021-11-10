@@ -10,7 +10,12 @@ public class MainApp {
 	private static int salida = 0;
 
 	public static void main(String[] args) {
-		
+		// Bucle del juego que se repetirá hasta que salida valga 1
+		while(salida == 0) {
+			ejecutarOpcion(elegirOpcion());
+			System.out.println("\n");
+		}
+		System.out.println("Fin del juego.");
 	}
 	
 	// Muestra la respresentación de la torre
