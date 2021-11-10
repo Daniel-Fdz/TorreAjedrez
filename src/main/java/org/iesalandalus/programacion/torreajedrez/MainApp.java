@@ -17,4 +17,18 @@ public class MainApp {
 		}
 	}
 
+	// Menú con las diferentes opciones para el jugador
+	private static void mostrarMenu() {
+		System.out.println("Introduzca una opción:");
+		System.out.println("*-----------------------------------------------------------------*");
+		System.out.println("1. Crear una torre por defecto");
+		System.out.println("2. Crear una torre de un color");
+		System.out.println("3. Crear una torre de un color en una columna inicial (a o h)");
+		System.out.println("4. Mover la torre");
+		System.out.println("5. Enroque corto");
+		System.out.println("6. Enroque largo");
+		System.out.println("7. Salir");
+		System.out.println("*-----------------------------------------------------------------*");
+	}
+
 }
